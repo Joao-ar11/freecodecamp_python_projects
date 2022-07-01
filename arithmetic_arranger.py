@@ -10,6 +10,8 @@ def arithmetic_arranger(problems, answer=False):
     line4 = ''
     for n, problem in enumerate(problems):
         element = problem.split()
+        if len(element) > 3 or len(element) < 3:
+            return 'Error: Incorrect Input'
         if len(element[0]) > 4 or len(element[2]) > 4:
             return 'Error: Numbers cannot be more than four digits.'
         if len(element[0]) > len(element[2]):
