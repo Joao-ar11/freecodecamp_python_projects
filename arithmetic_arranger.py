@@ -8,7 +8,7 @@ def arithmetic_arranger(problems, answer=False):
     line2 = ''
     line3 = ''
     line4 = ''
-    for problem in problems:
+    for n, problem in enumerate(problems):
         element = problem.split()
         if len(element[0]) > 4 or len(element[2]) > 4:
             return 'Error: Numbers cannot be more than four digits.'
@@ -27,10 +27,15 @@ def arithmetic_arranger(problems, answer=False):
             result = element[0] - element[2]
         else:
             return "Error: Operator must be '+' or '-'."
-        line1 += ' ' * (length - len(str(element[0]))) + f'{element[0]}    '
-        line2 += f'{element[1]}' + ' ' * (length - len(str(element[2])) - 1) + f'{element[2]}    '
-        line3 += '-' * length + '    '
-        line4 += ' ' * (length - len(str(result))) + f'{result}    '
+        line1 += ' ' * (length - len(str(element[0]))) + f'{element[0]}'
+        line2 += f'{element[1]}' + ' ' * (length - len(str(element[2])) - 1) + f'{element[2]}'
+        line3 += '-' * length
+        line4 += ' ' * (length - len(str(result))) + f'{result}'
+        if n < len(problems) - 1:
+            line1 += '    '
+            line2 += '    '
+            line3 += '    '
+            line4 += '    '
     if answer:
         return f'{line1}\n{line2}\n{line3}\n{line4}'
     else:
