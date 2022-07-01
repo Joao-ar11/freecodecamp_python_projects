@@ -1,4 +1,4 @@
-def arithmetic_arranger(problems):
+def arithmetic_arranger(problems, answer=False):
     qnt = len(problems)
     result = list()
     line1 = ''
@@ -19,4 +19,7 @@ def arithmetic_arranger(problems):
         line2 += f'{element[1]}' + ' ' * (length - len(element[2]) - 1) + f'{element[2]}    '
         line3 += '-' * length + '    '
         line4 += ' ' * (length - len(str(result))) + f'{result}    '
-    print(f'{line1}\n{line2}\n{line3}\n{line4}')
+    if answer:
+        return f'{line1}\n{line2}\n{line3}\n{line4}'
+    else:
+        return f'{line1}\n{line2}\n{line3}'
