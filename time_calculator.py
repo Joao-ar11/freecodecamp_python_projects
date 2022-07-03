@@ -29,7 +29,7 @@ def add_time(start, duration, day='null'):
         else:
             new_time = f'{new_hour}:{new_minutes:02d} {hour1[1]} ({days} days later)'
     else:
-        week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        week = ('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')
         counter = week.index(day.capitalize())
         counter = (counter + days) % 7
         new_day = week[counter]
